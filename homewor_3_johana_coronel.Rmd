@@ -1,0 +1,47 @@
+---
+title: "homework_3"
+author: "Johana Coronel"
+date: "9/16/2020"
+output: html_document
+---
+1. Mean function 
+```{r}
+x=1:500
+mean_function= function(x)
+mean_function= (sum(x)/length(x))
+return(mean_function)
+```
+
+Import data
+```{r}
+getwd()
+setwd("C:/Users/johis/Documents/R/Homework_2")
+data=read.csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-01/key_crop_yields.csv")
+View(data)
+```
+
+2. Range 
+```{r}
+range(data["Year"])
+```
+
+3. Mean function
+```{r}
+maize_data=na.omit(data["Maize..tonnes.per.hectare."])
+mean_function(maize_data)
+return(mean_function)
+
+
+
+```
+4. Save the document 
+```{r}
+new_file= data["Entity"]
+write.csv(new_file, file= "new_file.csv")
+```
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
